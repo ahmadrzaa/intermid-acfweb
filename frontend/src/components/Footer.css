@@ -1,0 +1,119 @@
+/* =========  Footer — WOW (scoped, no bleed)  ========= */
+:root{
+  --ink:#0b1220;
+  --muted:#64748b;
+  --line:#e5e7eb;
+  --c1:#06b6d4;   /* teal */
+  --c2:#6366f1;   /* indigo */
+  --c3:#22c55e;   /* green */
+  --c4:#f59e0b;   /* amber */
+}
+
+.site-footer{
+  position: relative;
+  isolation: isolate; /* keep glows inside */
+  border-top: 0; /* we draw our own beam */
+  background:
+    radial-gradient(800px 150px at 10% 0, rgba(6,182,212,.10), transparent 60%),
+    radial-gradient(800px 150px at 90% 0, rgba(99,102,241,.10), transparent 60%),
+    linear-gradient(#ffffff, #fafcff);
+  box-shadow: 0 -10px 30px rgba(2,6,23,.05) inset;
+}
+
+/* animated gradient beam */
+.site-footer::before{
+  content:"";
+  position:absolute; left:0; right:0; top:0; height:3px;
+  background: linear-gradient(90deg, var(--c1), var(--c2), var(--c3), var(--c4), var(--c1));
+  background-size: 300% 100%;
+  animation: footerBeamSlide 12s linear infinite;
+  opacity:.75; pointer-events:none;
+}
+/* glow under the beam */
+.site-footer::after{
+  content:"";
+  position:absolute; left:0; right:0; top:-28px; height:64px;
+  background: radial-gradient(60% 80% at 50% 0, rgba(6,182,212,.22), transparent 70%);
+  filter: blur(18px); opacity:.55; pointer-events:none;
+}
+
+@keyframes footerBeamSlide{
+  0%{background-position:0% 50%}
+  100%{background-position:100% 50%}
+}
+
+.footer-inner.simple{
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 18px clamp(14px, 4vw, 28px);
+  padding-bottom: calc(18px + env(safe-area-inset-bottom,0px));
+  display:flex; flex-direction:column; align-items:center;
+  gap:10px; text-align:center;
+}
+
+/* base line */
+.footer-line{ margin:0; }
+
+/* Wrap beautifully everywhere, avoid single-word last lines */
+.site-footer .footer-tagline,
+.site-footer .footer-copy{
+  text-wrap: balance;          /* modern */
+  overflow-wrap: anywhere;     /* fallback */
+  max-inline-size: 72ch;
+}
+
+/* headline line – bold with animated accent pill */
+.site-footer .footer-tagline{
+  color:#0f172a;
+  font-weight:800;
+  font-size: clamp(14px, 1.4vw, 18px);
+  line-height:1.6;
+  text-shadow: 0 1px 0 #fff;
+  position: relative;
+}
+.site-footer .footer-tagline::before{
+  content:"";
+  display:block;
+  width:140px; height:6px; margin:0 auto 10px;
+  border-radius:999px;
+  background: linear-gradient(90deg, var(--c1), var(--c2), var(--c3));
+  background-size: 200% 100%;
+  animation: footerBeamSlide 14s linear infinite;
+  box-shadow: 0 8px 22px rgba(6,182,212,.25);
+}
+
+/* copyright line – gradient text, crisp edges */
+.site-footer .footer-copy{
+  font-size: clamp(12px, 1.05vw, 14px);
+  letter-spacing:.02em;
+  background: linear-gradient(90deg, #0ea5e9, #6366f1, #0ea5e9);
+  -webkit-background-clip:text; background-clip:text;
+  color: transparent;
+  filter: drop-shadow(0 1px 0 #fff);
+}
+.site-footer .footer-copy::after{
+  content:"";
+  display:block; margin:10px auto 0; height:1px; width:min(280px, 60vw);
+  background: linear-gradient(90deg, transparent, rgba(6,182,212,.6), rgba(99,102,241,.6), transparent);
+  opacity:.35;
+}
+
+/* ------- mobile polish ------- */
+@media (max-width: 480px){
+  .footer-inner.simple{ padding: 16px clamp(10px, 5vw, 18px); align-items:stretch; }
+  .site-footer .footer-tagline,
+  .site-footer .footer-copy{ max-inline-size: none; width:100%; }
+  .site-footer .footer-tagline{ font-size: 15px; }
+  .site-footer .footer-copy{ font-size: 12.5px; }
+}
+
+/* big screens */
+@media (min-width: 1280px){
+  .footer-inner.simple{ padding: 22px 40px; }
+}
+
+/* respect reduced motion */
+@media (prefers-reduced-motion: reduce){
+  .site-footer::before,
+  .site-footer .footer-tagline::before{ animation: none !important; }
+}

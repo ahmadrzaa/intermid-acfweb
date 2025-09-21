@@ -1,0 +1,33 @@
+/* =========================
+   GLOBAL / APP SHELL
+   ========================= */
+* { box-sizing: border-box; }
+html, body, #root { height: 100%; }
+
+body{
+  margin:0;
+  font-family: Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  background:#f6f9fc;
+  color:#0b1220;
+}
+
+/* app shell */
+.app-shell{ min-height:100vh; display:flex; flex-direction:column; }
+main{ flex:1; }
+
+/* page pad + subtle canvas glow */
+.main-content{
+  padding:18px;
+  background:
+    radial-gradient(800px 300px at -10% -10%, rgba(14,165,233,.06), transparent 60%),
+    radial-gradient(800px 300px at 110% -10%, rgba(124,58,237,.06), transparent 60%),
+    #f6f9fc;
+}
+
+/* nicer focus outline globally */
+a, button, input, select { outline-offset:2px; }
+
+/* motion-safe */
+@media (prefers-reduced-motion: reduce){
+  * { animation: none !important; transition: none !important; }
+}
