@@ -1,6 +1,6 @@
 # INTERMID ACF
 
-> A full-stack app that digitizes **INTERMID’s Action Cycle Framework**.
+> A full-stack app that digitizes **INTERMID’s Action Cycle Framework**
 
 ---
 
@@ -18,7 +18,6 @@
 ## 📸 Screenshot
 
 ![Screenshot](screenshot.png)
-
 
 ---
 
@@ -67,8 +66,6 @@
 
 - CSV & PDF export of current stage only
 
-
-
 ---
 
 ## 🚀 Quick Start
@@ -85,6 +82,7 @@ npm install
 npm run dev     # http://localhost:5173
 ```
 
+---
 
 ## 📄 License
 
