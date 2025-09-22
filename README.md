@@ -8,7 +8,7 @@ A full-stack app that digitizes INTERMID’s Action Cycle Framework.
 - Exports: CSV / PDF (current stage).
 - Auth: simple session token via headers (dev only).
 - DB: SQLite (file), auto-init with schema + a couple of sample items.
-- ![alt text](<Screenshot 2025-09-21 170759.png>)
+  ![alt text](<Screenshot 2025-09-21 170759.png>)
 
 Quick Start (Local)
 
