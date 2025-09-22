@@ -19,21 +19,6 @@
 
 ![Screenshot](screenshot.png)
 
----
-
-## 🚀 Quick Start
-
-```bash
-# Backend
-cd backend
-npm install
-npm run dev     # http://localhost:3001
-
-# Frontend
-cd frontend
-npm install
-npm run dev     # http://localhost:5173
-```
 
 ---
 
@@ -82,7 +67,24 @@ npm run dev     # http://localhost:5173
 
 - CSV & PDF export of current stage only
 
+
+
 ---
+
+## 🚀 Quick Start
+
+```bash
+# Backend
+cd backend
+npm install
+npm run dev     # http://localhost:3001
+
+# Frontend
+cd frontend
+npm install
+npm run dev     # http://localhost:5173
+```
+
 
 ## 📄 License
 
