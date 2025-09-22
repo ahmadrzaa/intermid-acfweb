@@ -84,19 +84,21 @@ npm run dev     # http://localhost:5173
 
 ---
 
-## 📄 MIT License
+## 📄 License
 
 ```
-MIT License
+All Rights Reserved
 
 Copyright (c) 2025 Ahmad Raza
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the “Software”), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+This software, source code, and all associated files are the intellectual property of the author.
 
-THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND.
+You are NOT permitted to:
+- Copy, modify, distribute, or sell any part of this software
+- Use this software in any commercial or non-commercial product
+- Publish or redistribute any portion of this project
+
+Any usage without explicit written permission from the author is strictly prohibited.
+
+This project is private and protected under applicable copyright laws.
 ```
