@@ -1,57 +1,92 @@
 # INTERMID ACF
 
-A full-stack app that digitizes INTERMID’s Action Cycle Framework.
+> A full-stack app that digitizes **INTERMID’s Action Cycle Framework**.
 
-- Workspace: left Process Flow, middle Action Table, right 2×2 Matrix (drag & drop).
-- Dashboard: live KPIs + charts from your items.
-- Roles: admin, manager, team (team has limited edits).
-- Exports: CSV / PDF (current stage).
-- Auth: simple session token via headers (dev only).
-- DB: SQLite (file), auto-init with schema + a couple of sample items.
-  
- ![Screenshot](screenshot.png)
+---
 
+## 🧩 Overview
 
-Quick Start (Local)
+- **Workspace**: Left Process Flow → Middle Action Table → Right 2×2 Matrix (drag & drop)  
+- **Dashboard**: Live KPIs + per-item charts  
+- **Roles**: `admin`, `manager`, `team` (limited editing)  
+- **Exports**: CSV / PDF (per stage)  
+- **Auth**: Header token (dev only)  
+- **Database**: SQLite file with schema + sample items  
 
-Backend:
+---
+
+## 📸 Screenshot
+
+![Screenshot](screenshot.png)
+
+---
+
+## 🚀 Quick Start
+
+```bash
+# Backend
 cd backend
-npm i
-npm run dev        # API → http://localhost:3001
+npm install
+npm run dev     # http://localhost:3001
 
-Frontend:
+# Frontend
 cd frontend
-npm i
-npm run dev        # Frontend → http://localhost:5173
+npm install
+npm run dev     # http://localhost:5173
+```
 
-Tech Stack
+---
 
-Frontend: React + Vite (plain CSS)
-Backend: Node (Express), SQLite
-Auth: In-memory sessions (dev-only)
-Ports: 5173 (frontend), 3001 (API with proxy)
-Schema fields: id, number, title, factor, action, scope, time, resources, exec_status, notes, current_step, created_at, updated_at
+## ⚙️ Tech Stack
 
-Features Overview
+- **Frontend**: React + Vite (plain CSS)  
+- **Backend**: Node.js (Express)  
+- **Database**: SQLite  
+- **Auth**: In-memory session token  
+- **Ports**: Web 5173, API 3001 (`/api` proxy)  
+- **Schema Fields**:  
+  `id`, `number`, `title`, `factor`, `action`, `scope`, `time`, `resources`, `exec_status`, `notes`, `current_step`, `created_at`, `updated_at`
 
-Workspace:
-Left: Process Flow — Item → Factor → Action → Scope / Time / Resources → Status
-Middle: Action Table — inline edit of title, factor, action, scope, time, resources, status, notes
-Right: 2×2 Matrix — drag cards between quadrants (Scope × Resources)
+---
 
-Dashboard:
-Live stats: Total, Completed, In Progress, Delayed
-Charts: bar charts by item + quadrant donut
+## 🎯 Feature Breakdown
 
-Auth & Roles:
-Roles: admin, manager, team
-Team can only update status and notes
+### Workspace
 
-Export:
-Export current stage to CSV or PDF
+| Panel       | Functionality                                                           |
+|-------------|-------------------------------------------------------------------------|
+| Left        | Process Flow: Item → Factor → Action → Scope / Time / Resources → Status |
+| Middle      | Action Table: inline editing of title, factor, scope, status, etc.       |
+| Right       | 2×2 Matrix: drag cards between Scope × Resources quadrants               |
 
-MIT License
+---
 
+### Dashboard
+
+- KPI cards for: **Total**, **Completed**, **In Progress**, **Delayed**  
+- Per-item colored bars + quadrant donut chart
+
+---
+
+### Roles & Permissions
+
+| Role    | Access                                |
+|---------|----------------------------------------|
+| admin   | Full access                            |
+| manager | Full access                            |
+| team    | Can only update `status`, `notes`      |
+
+---
+
+### Export
+
+- CSV & PDF export of current stage only
+
+---
+
+## 📄 MIT License
+
+```
 MIT License
 
 Copyright (c) 2025 Ahmad Raza
@@ -64,3 +99,4 @@ copies of the Software, and to permit persons to whom the Software is
 furnished to do so, subject to the following conditions:
 
 THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND.
+```
